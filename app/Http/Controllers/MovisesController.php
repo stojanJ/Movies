@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreMovie;
 
 class MovisesController extends Controller
 {
@@ -25,8 +26,9 @@ class MovisesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+        info("ovde sam");
+        return view('posts.create');    
     }
 
     /**
@@ -35,9 +37,19 @@ class MovisesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMovie $request)
     {
-        //
+        $validated = $request->validated();
+        info($request);
+        Movie::create([
+            'title' => $validated['title'],
+            'storyline' => $validated['storyline'],
+            'directior' => $validated['directior'],
+            'year_of_production' => $validated['year_of_production'],
+            'genre' => $validated['genre'],
+        ]);
+
+        return redirect('/posts/movies');
     }
 
     /**

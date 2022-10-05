@@ -18,6 +18,10 @@ use App\Models\Movie;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::post('posts/movies', [MovisesController::class, 'store']);
 Route::get('/posts/movies', [MovisesController::class, 'index']);
 Route::get('/posts/movies/{id}', [MovisesController::class, 'show'])->name('single-moive');
+
+Route::get('/posts/create' , [ MovisesController::class ,'create']);
+
+
