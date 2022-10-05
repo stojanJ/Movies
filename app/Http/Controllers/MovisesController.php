@@ -46,13 +46,13 @@ class MovisesController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie)
+    public function show(Movie $id)
     {        
         // dd($movie);
 
-        $movie = Movie::find($movie);
-
-        return view('posts.single-movie', compact('movie'));
+        $movie = Movie::find($id)->first();
+        return view('posts.single-movie', 
+           [ 'movie' => $movie]);
     }
 
     /**

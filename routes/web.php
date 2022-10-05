@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovisesController;
+use App\Models\Movie;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', [MovisesController::class, 'index']);
-Route::get('/posts/{id}', [MovisesController::class, 'show'])->name('single-moive');
+Route::get('/posts/movies', [MovisesController::class, 'index']);
+Route::get('/posts/movies/{id}', [MovisesController::class, 'show'])->name('single-moive');

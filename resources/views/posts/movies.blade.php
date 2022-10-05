@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Blog')
+@section('title', 'Movie')
 
 @section('content')
     <ul>
