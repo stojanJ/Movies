@@ -12,7 +12,8 @@
                         <li>
                         <a href="{{ route('single-moive', [ 'id' => $movie->id ]) }}">
                             {{ $movie->title }}
-                        </a>
+                        </a><br>
+                        <a href= "{{ route('genre',['genre' => $movie->genre])}}">{{ $movie->genre }} </a><br>
                         {{ $movie->storyline}}
                     </li></p>
                     <div class="d-flex justify-content-between align-items-center">

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovisesController;
 use App\Models\Movie;
 use App\Http\Controllers\CommentsController;
-
+use App\Http\Controllers\GenresController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +26,5 @@ Route::get('/posts/movies/{id}', [MovisesController::class, 'show'])->name('sing
 Route::get('/posts/create' , [ MovisesController::class ,'create']);
 
 Route::post('/posts/movies/{id}/comments', [CommentsController::class, 'store']);
+
+Route::get('/posts/movies/genre/{genre}', [GenresController::class, 'show'])->name('genre');

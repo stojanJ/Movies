@@ -28,7 +28,7 @@ class MovisesController extends Controller
      */
     public function create()
     { 
-        info("ovde sam");
+        // info("ovde sam");
         return view('posts.create');    
     }
 
