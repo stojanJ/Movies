@@ -3,6 +3,8 @@
 @section('title', 'Movie')
 
 @section('content')
+
+@include('partials.side-bar',['movies' => $sidebarMovies])
     <ul>
             @foreach ($movies as $movie)
             <div class="col-md-12">

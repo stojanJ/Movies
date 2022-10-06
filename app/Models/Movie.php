@@ -16,4 +16,11 @@ class Movie extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+    public static function movieList(){
+        
+        
+        return self::orderBy('created_at', 'DESC')->take(5)->get();
+
+    }
 }

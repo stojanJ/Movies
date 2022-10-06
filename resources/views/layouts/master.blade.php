@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="../resources/css/album.css" rel="stylesheet">
-  </head>
-
+    <link rel="stylesheet" href="{{ URL::asset('css/album.css') }}"> 
+   </head>
   <body>
 
     @include('partials.header')
@@ -35,7 +34,7 @@
       </section>
       
       <div class="album py-5 bg-light">
-        @include('partials.side-bar')
+       
         <div class="container">
           
           <div class="row">

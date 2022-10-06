@@ -17,8 +17,9 @@ class MovisesController extends Controller
     public function index()
     {
         $movies = Movie::all();
+        $sidebarMovies= Movie::movieList();
     
-        return view('posts.movies', compact('movies'));
+        return view('posts.movies', compact('movies', 'sidebarMovies'));
     }
 
     /**
@@ -41,7 +42,6 @@ class MovisesController extends Controller
     public function store(StoreMovie $request)
     {
         $validated = $request->validated();
-        info($request);
         Movie::create([
             'title' => $validated['title'],
             'storyline' => $validated['storyline'],
@@ -66,6 +66,7 @@ class MovisesController extends Controller
         $movie = Movie::find($id)->first();
         return view('posts.single-movie', 
            [ 'movie' => $movie]);
+
     }
 
     /**
