@@ -3,6 +3,8 @@
 
 @section('title', $movies->genre)
 
+@include('partials.side-bar',['movies' => $sidebarMovies])
+
 @section('content')
 
 @foreach ($movies as $movie)
