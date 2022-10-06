@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreMovie;
+use App\Models\Comment;
 
 class MovisesController extends Controller
 {
